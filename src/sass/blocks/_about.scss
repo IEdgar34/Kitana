@@ -1,0 +1,97 @@
+@use "../mixins/mixins" as *;
+@use "sass:math";
+.about {
+    width: 100%;
+    &__wrapper {
+        width: 100%;
+        padding: 80px 70px 125px 0;
+        display: flex;
+        gap: 40px;
+     /*    align-items: start; */
+    }
+    &__image {
+        width: 50%;
+        max-height: 1230px;
+        max-height: 100%;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: inherit;
+            max-width: inherit;
+            object-fit: fill;
+        }
+    }
+    &__txt {
+        width: 60%;
+        text-align: right;
+        padding-top: 80px;
+    }
+    &__title {
+        font-family: "Druk Text Cyr" sans-serif;
+        font-weight: 500;
+        $w: math.div(180, math.div(2240, 100));
+        font-size: clamp(40px, #{$w}vw, 180px);
+    }
+    &__subtitle {
+        text-align: justify;
+        font-family: "Daikon", sans-serif;
+        $w: math.div(44, math.div(2240, 100));
+        font-size: clamp(18px, #{$w}vw, 44px);
+
+        font-weight: 400;
+        /* display: flex;
+        flex-direction: column;
+        gap: 40px; */
+    }
+}
+
+/* MEDIA */
+.about {
+    
+    &__wrapper {
+        @include to-xxl {
+            display: block;
+            padding: 45px 10px 45px 10px;
+            text-align: justify;
+        }
+    }
+    &__image {
+        @include to-xxl {
+            display: inline;
+            float: left;
+            margin-right: 10px;
+            max-width: 500px;
+            max-height: 646px;
+        }
+        img {
+            @include to-xxl {
+                max-height: 600px;
+            }
+        }
+    }
+    &__txt {
+        @include to-xxl {
+            display: inline;
+            padding-top: 40px;
+            padding-left: 10px;
+            text-align: left;
+        }
+    }
+    &__title {
+        @include to-xxl {
+        }
+    }
+    &__subtitle {
+        @include to-xxl {
+            display: inline;
+            span {
+                
+            }
+        }
+    }
+}
+.slider {
+    width: 100%;
+    padding-top: 100px;
+}

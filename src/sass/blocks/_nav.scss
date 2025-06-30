@@ -1,0 +1,131 @@
+@use "../mixins/mixins" as *;
+.nav {
+    width: 100%;
+    transition-property: left;
+    transition-duration: 0.6s;
+    /*   padding-top: 60px; */
+
+    &_list {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            a {
+                font-family: "Daikon", sans-serif;
+                font-size: 45px;
+                font-weight: 400;
+                color: #cbbaa7;
+            }
+        }
+        .target {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: -25%;
+                top: 50%;
+                transform: translateY(-50%);
+                display: block;
+                width: 20px;
+                height: 19px;
+                background-color: #d04a2a;
+                border-radius: 50%;
+                @include to-xxl {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}
+.burger {
+    width: 40px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+    cursor: pointer;
+    @include to-lg {
+        display: flex;
+        position: relative;
+        z-index: 10001;
+        right: 10px;
+    }
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition-property: transform width;
+        transition-duration: 0.5s;
+    }
+    &_active {
+      
+        span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            &:nth-child(1) {
+                transform:translateY(-50%) rotate(45deg) ;
+               
+            }
+
+            &:nth-child(2) {
+                width: 0;
+            }
+            &:nth-child(3) {
+                 transform:translateY(-50%) rotate(-45deg) ;
+                
+            }
+        }
+    }
+}
+/* MEDIA */
+.nav {
+    @include to-lg {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #cbbaa7;
+    }
+    &_active {
+        left: 0;
+    }
+    &_list {
+        @include to-lg {
+            flex-direction: column;
+            padding-left: 60px;
+            padding-top: 60px;
+            gap: 40px;
+        }
+        &-item {
+            a {
+                @include to-xxxl {
+                    font-size: 35px;
+                }
+                @include to-xxl {
+                    font-size: 25px;
+                }
+                @include to-lg {
+                    color: black;
+                }
+                @include to-xs {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .target {
+        &::before {
+            @include to-xxl {
+                width: 15px;
+                height: 15px;
+            }
+            @include to-lg {
+                left: -2em;
+            }
+        }
+    }
+}

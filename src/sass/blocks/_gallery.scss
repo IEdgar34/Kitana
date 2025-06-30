@@ -1,0 +1,104 @@
+@use "../mixins/mixins" as *;
+@use "sass:math";
+.gallery {
+    width: 100%;
+    height: auto;
+    $mb: math.div(250, math.div(2240, 100));
+    padding-top: clamp(45px, #{$mb}vw, 250px);
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    &__title {
+        font-family: "Druk Text Cyr", sans-serif;
+        font-weight: 500;
+        color: #202020;
+        text-align: center;
+        $w: math.div(115, math.div(2240, 100));
+        font-size: clamp(40px, #{$w}vw, 115px);
+        margin-bottom: 150px;
+        $m: math.div(150, math.div(2240, 100));
+        margin-bottom: clamp(40px, #{$m}vw, 150px);
+    }
+    &--swiper {
+        max-width: 2000px;
+        min-width: 290px;
+    }
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+        max-width: 450px;
+        max-height: 372px;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    .swiper-wrapper {
+    }
+    .swiper-button-prev {
+        flex-shrink: 0;
+    }
+    .swiper-button-next {
+        flex-shrink: 0;
+    }
+}
+
+/* MEDIA */
+.gallery {
+    &__wrapper {
+        @include to-sm {
+            position: relative;
+        }
+    }
+    &__title {
+    }
+    &--swiper {
+    }
+    .swiper-slide {
+        @include to-sm {
+            max-width: 100%;
+            min-width: 270px;
+        }
+        img {
+        }
+    }
+    .swiper-wrapper {
+    }
+    .swiper-button-prev {
+        @include to-sm {
+            position: absolute;
+            bottom: -4em;
+        }
+        @include to-xxxl {
+            width: 46px;
+            height: 46px;
+        }
+        img {
+            @include to-xxxl {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .swiper-button-next {
+        @include to-sm {
+            position: absolute;
+            right: 0;
+            bottom: -4em;
+        }
+        @include to-xxxl {
+            width: 46px;
+            height: 46px;
+        }
+        img {
+            @include to-xxxl {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

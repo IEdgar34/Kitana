@@ -1,0 +1,165 @@
+@use "../mixins/mixins" as *;
+@use "sass:math";
+.popular-dishes {
+    width: 100%;
+    height: auto;
+    $mb: math.div(250, math.div(2240, 100));
+    padding-top: clamp(75px, #{$mb}vw, 250px);
+    padding-bottom: 100px;
+    &__wrapper {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    &__title {
+        font-family: "Druk Text Cyr", sans-serif;
+        font-weight: 500;
+        color: #202020;
+        text-align: center;
+        $w: math.div(115, math.div(2240, 100));
+        font-size: clamp(40px, #{$w}vw, 115px);
+        margin-bottom: 150px;
+        $m: math.div(150, math.div(2240, 100));
+        margin-bottom: clamp(40px, #{$m}vw, 150px);
+    }
+    &--swiper {
+        max-width: 1800px;
+        min-width: 290px;
+    }
+    &-card {
+        max-width: 400px;
+        height: 100%;
+        padding: 15px;
+        transition-property: background;
+        transition-duration: 0.3s;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        img {
+            display: block;
+            width: 100%;
+            max-height: 363px;
+            margin-bottom: 10px;
+        }
+        @include hover {
+            &:hover {
+                background-color: #ef4923;
+            }
+            &:active {
+                background-color: #ef4923;
+            }
+        }
+    }
+    &-descr-wrapper {
+        
+       
+    }
+    &-descr-title {
+        font-family: "Daikon", sans-serif;
+        font-size: 38px;
+        font-weight: 400;
+        line-height: normal;
+        color: #181818;
+        $fs: math.div(35, math.div(2240, 100));
+        font-size: clamp(25px, #{$fs}vw, 35px);
+    }
+
+    &-descr-subtitle {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    &-descr-height {
+        font-family: "Daikon", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: normal;
+        color: #181818;
+        $fs: math.div(30, math.div(2240, 100));
+        font-size: clamp(18px, #{$fs}vw, 30px);
+    }
+    &-descr-price {
+        font-family: "Daikon", sans-serif;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: normal;
+        color: #181818;
+        $fs: math.div(50, math.div(2240, 100));
+        font-size: clamp(30px, #{$fs}vw, 50px);
+    }
+    .swiper-slide {
+        max-width: max-content;
+        height: inherit;
+       
+    }
+    .swiper-wrapper {
+        height: inherit;
+        align-items: stretch;
+    }
+    .popular-swiper-button-prev {
+        flex-shrink: 0;
+    }
+    .popular-swiper-button-next {
+        flex-shrink: 0;
+    }
+}
+
+/* MEDIA */
+.popular-dishes {
+    &__wrapper {
+        @include to-sm {
+            position: relative;
+            width: 100%;
+        }
+    }
+    &__title {
+    }
+    &--swiper {
+    }
+    .swiper-slide {
+        @include to-xs {
+            max-width: 100%;
+            min-width: 270px;
+        }
+        img {
+        }
+    }
+    .swiper-wrapper {
+    }
+    .popular-swiper-button-prev {
+        @include to-sm {
+            position: absolute;
+            bottom: -4em;
+        }
+        @include to-xxxl {
+            width: 46px;
+            height: 46px;
+        }
+        img {
+            @include to-xxxl {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .popular-swiper-button-next {
+        @include to-sm {
+            position: absolute;
+            right: 0;
+            bottom: -4em;
+        }
+        @include to-xxxl {
+            width: 46px;
+            height: 46px;
+        }
+        img {
+            @include to-xxxl {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

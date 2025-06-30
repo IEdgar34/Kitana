@@ -1,0 +1,74 @@
+@use "sass:math";
+@use "../mixins/mixins" as *;
+.delivery-services {
+    width: 100%;
+    padding: 100px 0 150px 0;
+    @include to-md {
+        padding: 60px 0;
+    }
+    .delivery-wrapper {
+        width: 100%;
+        max-width: 89%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        @include to-md {
+            max-width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .delivery-card {
+        display: flex;
+        width: max-content;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+        img {
+            display: block;
+            width: 100%;
+            max-width: 505px;
+            max-height: 120px;
+            @include to-md {
+                max-width: 305px;
+            }
+        }
+        @include to-md {
+            max-width: 100%;
+        }
+        &:nth-child(2) {
+            img {
+                @include to-md {
+                    max-width: 205px;
+                }
+            }
+        }
+    }
+    .delivery-order {
+        width: max-content;
+        font-family: "Daikon", sans-serif;
+        font-weight: 400;
+        $font: math.div(35, math.div(1920, 100));
+        font-size: clamp(20px, #{$font}vw, 35px);
+        color: #1b1a1a;
+        text-transform: uppercase;
+        position: relative;
+        transform: translateX(10px);
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: -1em;
+            top: 50%;
+            transform: translateY(-50%);
+            $w: math.div(19, math.div(1920, 100));
+            width: clamp(15px, #{$w}vw, 19px);
+            height: clamp(15px, #{$w}vw, 19px);
+            background-color: #ef4923;
+            border-radius: 50%;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+@use "../mixins/mixins" as *;
+.sliders {
+    width: 100%;
+    /* min-height: 1590px; */
+    background-image: url("./images/sliders-bg.png");
+    background-position: center bottom;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    @include to-lg {
+        background-size: 100% 70%;
+    }
+}

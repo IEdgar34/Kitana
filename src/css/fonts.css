@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Daikon';
+  src: url('../fonts/daikon-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* MONTSERRAT */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserratt/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* DURK */
+@font-face {
+  font-family: 'Druk Text Cyr';
+  src: 
+    url('../fonts/DrukTextCyr-Medium/DrukTextCyr-Medium.woff2') format('woff2'),
+    url('../fonts/DrukTextCyr-Medium/DrukTextCyr-Medium.woff') format('woff'),
+    url('../fonts/DrukTextCyr-Medium/DrukTextCyr-Medium.ttf') format('truetype'),
+    url('../fonts/DrukTextCyr-Medium/DrukTextCyr-Medium.eot') format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

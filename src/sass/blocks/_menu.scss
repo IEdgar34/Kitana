@@ -1,0 +1,58 @@
+@use "sass:math";
+@use "../mixins/mixins" as *;
+
+.menu {
+    width: 100%;
+    background-color: #ef4923;
+    padding: 40px 0;
+
+    &-wrapper {
+        width: 100%;
+        max-width: 90%;
+        height: auto;
+
+        margin: 0 auto;
+    }
+    &-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 25px;
+        @include to-md {
+            flex-direction: column;
+            /* align-items: start; */
+            /* justify-content: center; */
+            gap: 15px;
+        }
+    }
+    &-item {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 54%;
+            left: -2em;
+            transform: translateY(-50%);
+            display: block;
+            /* width: 19px;
+            height: 19px; */
+            $w: math.div(19, math.div(1920, 100));
+            width: clamp(15px, #{$w}vw, 19px);
+            height: clamp(15px, #{$w}vw, 19px);
+            border-radius: 50%;
+            background-color: #202020;
+        }
+        @include to-md {
+            width: 200px;
+        }
+    }
+    &-link {
+        font-family: "Druk Text Cyr", sans-serif;
+        font-weight: 500;
+        font-size: 50px;
+        $fs: math.div(50, math.div(2240, 100));
+        font-size: clamp(25px, #{$fs}vw, 50px);
+        color: #202020;
+        line-height: normal;
+    }
+}

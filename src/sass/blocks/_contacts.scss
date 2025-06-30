@@ -1,0 +1,106 @@
+@use "sass:math";
+@use "../mixins/mixins" as *;
+.contacts {
+    width: 100%;
+    height: auto;
+    padding-bottom: 120px;
+    &--wrapper {
+        width: 100%;
+        padding-left: 60px;
+        display: flex;
+        gap: 40px;
+        justify-content: end;
+    }
+    &--image-wrapper {
+        width: 60%;
+        height: 100%;
+        max-height: 980px;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &--contact-wrapper {
+        width: 40%;
+    }
+    &--title {
+        font-family: "Druk Text Cyr", sans-serif;
+        $fs: math.div(90, math.div(1920, 100));
+        font-size: clamp(40px, #{$fs}vw, 90px);
+        font-weight: 500;
+        color: #ef4923;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+    &--contact-wrapper {
+        $fs: math.div(80, math.div(1875, 100));
+        padding-top: clamp(10px, #{$fs}vw, 80px);
+    }
+    &--list {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+    &--list-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+            display: block;
+            max-width: 30px;
+            max-height: 40px;
+        }
+        p {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            line-height: normal;
+            $fs: math.div(38, math.div(1920, 100));
+            font-size: clamp(20px, #{$fs}vw, 38px);
+            color: #202020;
+        }
+    }
+}
+
+/* MEDIA */
+.contacts {
+    @include to-lg {
+        padding-bottom: 45px;
+    }
+    &--wrapper {
+        @include to-lg {
+            flex-direction: column;
+            padding-left: 0;
+            padding: 0 15px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &--image-wrapper {
+        @include to-lg {
+            width: 100%;
+        }
+
+        img {
+        }
+    }
+    &--contact-wrapper {
+        @include to-lg {
+            padding-top: 0;
+            width: 100%;
+        }
+    }
+    &--title {
+    }
+    &--contact-wrapper {
+    }
+    &--list {
+    }
+    &--list-link {
+        img {
+        }
+        p {
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@use "../mixins/mixins" as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    max-width: 2300px;
+    padding: 0 40px;
+    height: auto;
+    margin: 0 auto;
+    @include to-sm {
+        padding: 0 15px;
+    }
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol {
+    list-style-type: none;
+}
+html,
+body {
+    height: 100%;
+    background-color: #d2bba8;
+    scroll-behavior: smooth;
+}
+
+.overflow{
+    overflow: hidden;
+}

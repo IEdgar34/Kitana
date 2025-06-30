@@ -1,0 +1,16 @@
+@use "../mixins/mixins" as *;
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    margin-top: 60px;
+  
+}
+.header--wrapper {
+    display: flex;
+    align-items: center;
+    @include to-lg {
+        justify-content: end;
+    }
+}
