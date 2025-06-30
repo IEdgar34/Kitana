@@ -7,7 +7,6 @@ export const gallerySlider = (Swiper, Navigation, Pagination) => {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        
     });
 
     var swiper = new Swiper(".popular-dishes--swiper", {
@@ -21,10 +20,15 @@ export const gallerySlider = (Swiper, Navigation, Pagination) => {
         },
 
         breakpoints: {
-            374: {
+            780: {
                 slidesPerView: "auto",
                 spaceBetween: 60,
                 centeredSlides: false,
+            },
+            374: {
+                slidesPerView: "auto",
+                /* spaceBetween: 60, */
+                /* centeredSlides: false, */
             },
         },
     });
