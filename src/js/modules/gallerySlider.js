@@ -10,7 +10,7 @@ export const gallerySlider = (Swiper, Navigation, Pagination) => {
         },
         breakpoints: {
             1441: {
-                /* slidesPerView: "auto", */
+                slidesPerView: 4,
                 spaceBetween: 60,
                 /* centeredSlides: false, */
             },
