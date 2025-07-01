@@ -89,6 +89,7 @@
         font-size: clamp(30px, #{$fs}vw, 50px);
     }
     .swiper-slide {
+        width: 100% !important;
         max-width: max-content;
         height: inherit;
     }
@@ -139,6 +140,7 @@
     }
     .swiper-slide {
         @include to-xs {
+            width: 100%;
             max-width: 100%;
             min-width: 270px;
         }

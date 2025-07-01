@@ -2,6 +2,7 @@ export const gallerySlider = (Swiper, Navigation, Pagination) => {
     var swiper = new Swiper(".gallery--swiper", {
         slidesPerView: "auto",
         spaceBetween: 20,
+        loop: true,
         /* centeredSlides: true, */
         modules: [Navigation],
         navigation: {
@@ -10,18 +11,24 @@ export const gallerySlider = (Swiper, Navigation, Pagination) => {
         },
         breakpoints: {
             1441: {
-                slidesPerView: 4,
+                loop: true,
+                slidesPerView: "auto",
                 spaceBetween: 60,
                 /* centeredSlides: false, */
             },
+           /*  1441: {
+                loop: false,
+                spaceBetween: 60,
+            }, */
             
         },
     });
 
     var swiper = new Swiper(".popular-dishes--swiper", {
-        /* slidesPerView: 1, */
+        slidesPerView: "auto",
         centeredSlides: true,
         spaceBetween: 20,
+        loop: true,
         modules: [Navigation],
         navigation: {
             nextEl: ".popular-swiper-button-next",
@@ -31,7 +38,7 @@ export const gallerySlider = (Swiper, Navigation, Pagination) => {
         breakpoints: {
             1441: {
                 centeredSlides: false,
-                spaceBetween: 60,
+                spaceBetween: 50,
             },
             780: {
                 centeredSlides: false,
