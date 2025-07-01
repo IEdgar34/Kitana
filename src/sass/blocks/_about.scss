@@ -7,7 +7,7 @@
         padding: 80px 70px 125px 0;
         display: flex;
         gap: 40px;
-     /*    align-items: start; */
+        /*    align-items: start; */
     }
     &__image {
         width: 50%;
@@ -30,16 +30,21 @@
     &__title {
         font-family: "Druk Text Cyr" sans-serif;
         font-weight: 500;
-        $w: math.div(180, math.div(2240, 100));
-        font-size: clamp(40px, #{$w}vw, 180px);
+        $w: math.div(160, math.div(2240, 100));
+        font-size: clamp(40px, #{$w}vw, 160px);
+        color: #202020;
     }
     &__subtitle {
         text-align: justify;
         font-family: "Daikon", sans-serif;
-        $w: math.div(44, math.div(2240, 100));
-        font-size: clamp(18px, #{$w}vw, 44px);
-
+        $w: math.div(34, math.div(1920, 100));
+        font-size: clamp(18px, #{$w}vw, 34px);
         font-weight: 400;
+        color: #202020;
+        span {
+            color: inherit;
+        }
+
         /* display: flex;
         flex-direction: column;
         gap: 40px; */
@@ -48,7 +53,6 @@
 
 /* MEDIA */
 .about {
-    
     &__wrapper {
         @include to-xxl {
             display: block;
@@ -86,7 +90,6 @@
         @include to-xxl {
             display: inline;
             span {
-                
             }
         }
     }

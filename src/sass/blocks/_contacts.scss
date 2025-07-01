@@ -27,8 +27,8 @@
     }
     &--title {
         font-family: "Druk Text Cyr", sans-serif;
-        $fs: math.div(90, math.div(1920, 100));
-        font-size: clamp(40px, #{$fs}vw, 90px);
+        $fs: math.div(75, math.div(1920, 100));
+        font-size: clamp(40px, #{$fs}vw, 75px);
         font-weight: 500;
         color: #ef4923;
         line-height: normal;
@@ -49,15 +49,15 @@
         gap: 10px;
         img {
             display: block;
-            max-width: 30px;
-            max-height: 40px;
+            max-width: 35px;
+            max-height: 45px;
         }
         p {
             font-family: "Montserrat", sans-serif;
             font-weight: 500;
             line-height: normal;
-            $fs: math.div(38, math.div(1920, 100));
-            font-size: clamp(20px, #{$fs}vw, 38px);
+            $fs: math.div(32, math.div(1920, 100));
+            font-size: clamp(20px, #{$fs}vw, 32px);
             color: #202020;
         }
     }

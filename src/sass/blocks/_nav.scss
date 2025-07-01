@@ -16,26 +16,55 @@
                 font-weight: 400;
                 color: #cbbaa7;
             }
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: -1.5em;
+                top: 50%;
+                transform: translateY(-50%) scale(0);
+                width: 15px;
+                height: 15px;
+                background-color: #d04a2a;
+                border-radius: 50%;
+                transition-property: transform;
+                transition-duration: 0.3s;
+                @include to-xxl {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+            &:hover {
+                &::before {
+                    transform: translateY(-50%) scale(1);
+                }
+            }
         }
-        .target {
+       /*  .target {
             position: relative;
             &::before {
                 content: "";
                 position: absolute;
                 left: -25%;
                 top: 50%;
-                transform: translateY(-50%);
-                display: block;
-                width: 20px;
-                height: 19px;
+                transform: translateY(-50%) scale(0);
+                width: 15px;
+                height: 15px;
                 background-color: #d04a2a;
                 border-radius: 50%;
+                transition-property: transform;
+                transition-duration: 0.3s;
                 @include to-xxl {
                     width: 15px;
                     height: 15px;
                 }
             }
-        }
+            &:hover {
+                &::before {
+                    transform: translateY(-50%) scale(1);
+                }
+            }
+        } */
     }
 }
 .burger {
@@ -60,22 +89,19 @@
         transition-duration: 0.5s;
     }
     &_active {
-      
         span {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             &:nth-child(1) {
-                transform:translateY(-50%) rotate(45deg) ;
-               
+                transform: translateY(-50%) rotate(45deg);
             }
 
             &:nth-child(2) {
                 width: 0;
             }
             &:nth-child(3) {
-                 transform:translateY(-50%) rotate(-45deg) ;
-                
+                transform: translateY(-50%) rotate(-45deg);
             }
         }
     }
@@ -101,6 +127,7 @@
             gap: 40px;
         }
         &-item {
+            width: max-content;
             a {
                 @include to-xxxl {
                     font-size: 35px;
@@ -117,7 +144,7 @@
             }
         }
     }
-    .target {
+    /* .target {
         &::before {
             @include to-xxl {
                 width: 15px;
@@ -127,5 +154,5 @@
                 left: -2em;
             }
         }
-    }
+    } */
 }

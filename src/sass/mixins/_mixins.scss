@@ -3,6 +3,11 @@
         @content;
     }
 }
+@mixin to-1570 {
+    @media (max-width: 1570px) {
+        @content;
+    }
+}
 @mixin to-xxl {
     @media (max-width: 1430px) {
         @content;

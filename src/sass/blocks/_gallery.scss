@@ -26,10 +26,14 @@
         max-width: 2000px;
         min-width: 290px;
     }
+    &-mob-btns {
+        display: none;
+    }
     .swiper-slide {
         width: 100%;
         height: 100%;
-        max-width: 450px;
+        max-width: 356px;
+
         max-height: 372px;
 
         img {
@@ -52,6 +56,7 @@
     &__wrapper {
         @include to-sm {
             position: relative;
+            display: block;
         }
     }
     &__title {
@@ -59,6 +64,12 @@
     &--swiper {
     }
     .swiper-slide {
+        @media (min-width: 1920px) and (max-width: 2240px) {
+            max-width: 430px;
+        }
+        @include to-1570 {
+            max-width: 280px;
+        }
         @include to-sm {
             max-width: 100%;
             min-width: 270px;
@@ -68,10 +79,20 @@
     }
     .swiper-wrapper {
     }
+    &-mob-btns {
+        @include to-sm {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+    }
     .swiper-button-prev {
         @include to-sm {
-            position: absolute;
+           /*  position: absolute;
             bottom: -4em;
+            left: 13em; */
+            /* display: none; */
         }
         @include to-xxxl {
             width: 46px;
@@ -84,11 +105,13 @@
             }
         }
     }
+
     .swiper-button-next {
         @include to-sm {
-            position: absolute;
-            right: 0;
-            bottom: -4em;
+            /* position: absolute;
+            right: 13em;
+            bottom: -4em; */
+            /* display: none; */
         }
         @include to-xxxl {
             width: 46px;
@@ -99,6 +122,16 @@
                 width: 100%;
                 height: 100%;
             }
+        }
+    }
+    .swiper-button-next:not(.mob) {
+        @include to-sm {
+            display: none;
+        }
+    }
+    .swiper-button-prev:not(.mob) {
+        @include to-sm {
+            display: none;
         }
     }
 }

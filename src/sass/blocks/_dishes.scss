@@ -26,7 +26,7 @@
     }
     &--swiper {
         max-width: 1800px;
-        min-width: 290px;
+        /*  min-width: 290px; */
     }
     &-card {
         max-width: 400px;
@@ -54,8 +54,6 @@
         }
     }
     &-descr-wrapper {
-        
-       
     }
     &-descr-title {
         font-family: "Daikon", sans-serif;
@@ -63,8 +61,8 @@
         font-weight: 400;
         line-height: normal;
         color: #181818;
-        $fs: math.div(35, math.div(2240, 100));
-        font-size: clamp(25px, #{$fs}vw, 35px);
+        $fs: math.div(30, math.div(2240, 100));
+        font-size: clamp(20px, #{$fs}vw, 30px);
     }
 
     &-descr-subtitle {
@@ -93,7 +91,6 @@
     .swiper-slide {
         max-width: max-content;
         height: inherit;
-       
     }
     .swiper-wrapper {
         height: inherit;
@@ -113,11 +110,32 @@
         @include to-sm {
             position: relative;
             width: 100%;
+            display: block;
         }
     }
     &__title {
     }
     &--swiper {
+    }
+    &-card {
+        @media (min-width: 1920px) and (max-width: 2240px) {
+            max-width: 400px;
+        }
+        @media (max-width: 2240px) {
+            max-width: 380px;
+        }
+        @include to-xxxl {
+            max-width: 315px;
+        }
+        @include to-1570 {
+            max-width: 247px;
+        }
+        @media (max-width: 425px) {
+            max-width: 100%;
+        }
+        @include to-xs {
+            max-width: 100%;
+        }
     }
     .swiper-slide {
         @include to-xs {
@@ -131,8 +149,8 @@
     }
     .popular-swiper-button-prev {
         @include to-sm {
-            position: absolute;
-            bottom: -4em;
+            /* position: absolute;
+            bottom: -4em; */
         }
         @include to-xxxl {
             width: 46px;
@@ -147,9 +165,9 @@
     }
     .popular-swiper-button-next {
         @include to-sm {
-            position: absolute;
+            /* position: absolute;
             right: 0;
-            bottom: -4em;
+            bottom: -4em; */
         }
         @include to-xxxl {
             width: 46px;
@@ -160,6 +178,16 @@
                 width: 100%;
                 height: 100%;
             }
+        }
+    }
+    .popular-swiper-button-prev:not(.mob) {
+        @include to-sm {
+            display: none;
+        }
+    }
+    .popular-swiper-button-next:not(.mob) {
+        @include to-sm {
+            display: none;
         }
     }
 }
