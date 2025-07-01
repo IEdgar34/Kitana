@@ -24,10 +24,10 @@
         display: flex;
         width: max-content;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 70px;
-        img {
+        /*  img {
             display: block;
             width: 100%;
             max-width: 505px;
@@ -35,14 +35,31 @@
             @include to-md {
                 max-width: 305px;
             }
-        }
+        } */
         @include to-md {
             max-width: 100%;
             gap: 20px;
         }
+        &:nth-child(1) {
+            img {
+                max-width: 205px;
+                @include to-lg {
+                    max-width: 150px;
+                }
+            }
+        }
         &:nth-child(2) {
             img {
-                @include to-md {
+                max-width: 205px;
+                @include to-lg {
+                    max-width: 150px;
+                }
+            }
+        }
+        &:nth-child(3) {
+            img {
+                max-width: 305px;
+                @include to-lg {
                     max-width: 205px;
                 }
             }
@@ -52,8 +69,8 @@
         width: max-content;
         font-family: "Daikon", sans-serif;
         font-weight: 400;
-        $font: math.div(35, math.div(1920, 100));
-        font-size: clamp(20px, #{$font}vw, 35px);
+        $font: math.div(28, math.div(1920, 100));
+        font-size: clamp(20px, #{$font}vw, 28px);
         color: #1b1a1a;
         text-transform: uppercase;
         position: relative;
