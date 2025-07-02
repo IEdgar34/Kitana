@@ -11,8 +11,11 @@
         max-width: 89%;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content:center;
         gap: 40px;
+        flex-wrap: wrap;
+        row-gap: 80px;
+        
         @include to-md {
             max-width: 100%;
             flex-direction: column;
@@ -22,6 +25,7 @@
     }
     .delivery-card {
         display: flex;
+        min-width: 305px;
         width: max-content;
         flex-direction: column;
         justify-content: space-between;
@@ -61,6 +65,14 @@
                 max-width: 305px;
                 @include to-lg {
                     max-width: 205px;
+                }
+            }
+        }
+        &:nth-child(4) {
+            img {
+                max-width: 205px;
+                @include to-lg {
+                    max-width: 150px;
                 }
             }
         }
