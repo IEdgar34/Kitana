@@ -60,15 +60,15 @@
                 }
             }
         }
-        &:nth-child(3) {
+        /* &:nth-child(3) {
             img {
                 max-width: 305px;
                 @include to-lg {
                     max-width: 205px;
                 }
             }
-        }
-        &:nth-child(4) {
+        } */
+        &:nth-child(3) {
             img {
                 max-width: 205px;
                 @include to-lg {
@@ -102,4 +102,5 @@
             border-radius: 50%;
         }
     }
+    
 }
